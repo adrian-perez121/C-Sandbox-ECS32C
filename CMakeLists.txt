@@ -2,8 +2,10 @@ cmake_minimum_required(VERSION 3.10)
 project(hello)
 
 set (CMAKE_CXX_STANDARD 20)
-set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra")
+set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra --coverage")
 set (CMAKE_CXX_STANDARD_REQUIRED ON)
+set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Wextra --coverage")
+
 
 # This is geting gunit so you don't have to...
 include(FetchContent)
@@ -25,8 +27,8 @@ enable_testing()
 
 
 add_executable(testbinary confuzzle.c confuzzle_test.cpp stringexamples.cpp stringexamples_test.cpp
- stringexamples_c.c stringexamples_c_test.cpp llist.cpp llist_test.cpp
- c_list.c c_list_test.cpp) 
+ stringexamples_c.c stringexamples_c_test.cpp llist.cpp llist_test.cpp graph_test.cpp
+ c_list.c c_list_test.cpp fileio_test.cpp tuple_map_test.cpp) 
 target_link_libraries(
   testbinary
   GTest::gtest_main
