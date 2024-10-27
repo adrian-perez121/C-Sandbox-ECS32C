@@ -17,7 +17,9 @@ FetchContent_MakeAvailable(googletest)
 
 add_executable(hello main.c
         confuzzle.c
-        confuzzle.h)
+        confuzzle.h
+        c_list.c 
+        c_list.h)
 	
 enable_testing()
 
